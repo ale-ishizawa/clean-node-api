@@ -1,6 +1,6 @@
 import { SignUpController } from './signup'
 import { MissingParamError } from '../errors/missing-param-error'
-import { InvalidParamError } from '../errors/InvalidParamError'
+import { InvalidParamError } from '../errors/invalid-param-error'
 import { EmailValidator } from '../protocols/email-validator'
 
 interface SutTypes {
@@ -9,7 +9,7 @@ interface SutTypes {
 }
 
 const makeSut = (): SutTypes => {
-  class EmailValidatorStub implements EmailValidator {
+  class EmailValidatorStub implements EmailValidator { // Stub: dublê de teste
     isValid (email: string): boolean {
       return true
     }
