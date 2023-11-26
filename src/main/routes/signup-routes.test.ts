@@ -4,15 +4,15 @@ import { MongoHelper } from '../../infra/db/mongodb/helpers/mongo-helper'
 
 describe('Signup Routes', () => {
   beforeAll(async () => {
-    await MongoHelper.connect(process.env.MONGO_URL)
+    await await MongoHelper.connect(process.env.MONGO_URL)
   })
 
   afterAll(async () => {
-    await MongoHelper.disconnect()
+    await await MongoHelper.disconnect()
   })
 
   beforeEach(async () => {
-    const accountCollection = MongoHelper.getCollection('accounts')
+    const accountCollection = await MongoHelper.getCollection('accounts')
     await accountCollection.deleteMany({})
   })
 
